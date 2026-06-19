@@ -6,6 +6,8 @@
 # -------------------------------------------------------------------------
 # PACOTES
 # -------------------------------------------------------------------------
+options(repos = c(CRAN = "https://cran.r-project.org"))
+
 if (!require("ranger"))  install.packages("ranger")
 if (!require("caret"))   install.packages("caret")
 if (!require("writexl")) install.packages("writexl")

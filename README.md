@@ -31,6 +31,7 @@ TCC 2026-1/
 ├── Carregar base.R              # Etapa 1: carrega e limpa as duas bases
 │
 ├── Base/
+│   ├── web-scrapper.py          # Coleta os CSVs direto do ZAP Imóveis
 │   ├── porto_alegre_venda_zap.csv
 │   └── porto_alegre_aluguel_zap.csv
 │
@@ -44,6 +45,42 @@ TCC 2026-1/
 └── Via Espacial/
     └── Espacial.R              # SAR, SEM, Moran's I, testes LM
 ```
+
+---
+
+## Coleta dos dados
+
+Os CSVs podem ser obtidos de duas formas:
+
+### Opção A — usar os arquivos já incluídos no repositório
+
+Os arquivos `porto_alegre_venda_zap.csv` e `porto_alegre_aluguel_zap.csv` já estão na pasta `Base/`. Basta clonar o repositório e seguir direto para a [Ordem de execução](#ordem-de-execução).
+
+### Opção B — coletar novamente via scraper (dados atualizados)
+
+O script `Base/web-scrapper.py` bate na API interna do ZAP Imóveis e regenera os dois CSVs. Use quando quiser dados mais recentes.
+
+**Pré-requisitos Python:**
+
+```bash
+pip install requests pandas
+```
+
+**Como rodar:**
+
+```bash
+# A partir da raiz do repositório:
+cd Base
+python web-scrapper.py
+```
+
+O script:
+1. Coleta todos os anúncios de **venda** e **aluguel** ativos em Porto Alegre
+2. Pagina automaticamente (até 100 páginas × 24 anúncios)
+3. Aguarda 1,5 s entre requisições para evitar bloqueio
+4. Salva em `Base/porto_alegre_venda_zap.csv` e `Base/porto_alegre_aluguel_zap.csv`
+
+> **Atenção:** a API do ZAP limita a entrega a ~2.400 resultados por tipo de negócio. Para ampliar a cobertura, edite o parâmetro `addressNeighborhood` no script e rode por bairro.
 
 ---
 
