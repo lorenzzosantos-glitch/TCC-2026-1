@@ -28,11 +28,11 @@ cat("=== ETAPA 1: Carregando dados ===\n")
 
 # Definir diretório de trabalho (onde estão os CSVs)
 # NOTA: no R, usar barras normais "/" mesmo no Windows
-setwd(file.path(dirname(rstudioapi::getSourceEditorContext()$path), "..", "Base"))
+setwd("C:/Users/loren/OneDrive/Documentos/GitHub/TCC 2026-1")
 
 # Carregar os dados diretamente (reprodutível)
-dados_venda_brutos  <- read.csv("porto_alegre_venda_zap.csv")
-dados_aluguel_brutos <- read.csv("porto_alegre_aluguel_zap.csv")
+dados_venda_brutos  <- read.csv("Base/porto_alegre_venda_zap.csv")
+dados_aluguel_brutos <- read.csv("Base/porto_alegre_aluguel_zap.csv")
 
 cat("Vendas brutas:", nrow(dados_venda_brutos), "obs\n")
 cat("Aluguel bruto:", nrow(dados_aluguel_brutos), "obs\n")
