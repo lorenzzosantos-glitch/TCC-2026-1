@@ -133,7 +133,7 @@ A regra prática: se apenas LMlag é significativo → SAR; se apenas LMerr é s
 
 O **Random Forest** é um algoritmo de aprendizado de máquina que constrói centenas de árvores de decisão sobre subamostras aleatórias dos dados e combina as previsões pela média. Cada árvore aprende a segmentar os dados por regras do tipo "se área > 80m² e bairro = Moinhos de Vento, então o preço tende a ser X".
 
-No contexto deste TCC, o RF não substitui o modelo hedônico — ele **complementa** a análise, respondendo a uma pergunta diferente: quanto do preço conseguimos prever sem impor nenhuma estrutura funcional?
+O RF não substitui o modelo hedônico — ele **complementa** a análise, respondendo a uma pergunta diferente: quanto do preço conseguimos prever sem impor nenhuma estrutura funcional?
 
 ### 4.2 O que o RF libera em relação ao MQO
 
@@ -162,17 +162,3 @@ O parâmetro **mtry** (número de variáveis consideradas em cada divisão da á
 A **importância das variáveis por permutação** mostra como o erro de previsão aumenta quando os valores de cada variável são embaralhados aleatoriamente. Variáveis com alta importância são aquelas cujas relações com o preço o modelo aprendeu com maior profundidade.
 
 A pergunta central da comparação é: **o ganho de previsão do RF em relação ao MQO é expressivo o suficiente para justificar a perda de interpretabilidade?** Em mercados relativamente bem comportados, a resposta costuma ser não — e essa é, em si, uma conclusão econômica relevante.
-
----
-
-## Referências
-
-- ANSELIN, L. *Spatial Econometrics: Methods and Models*. Dordrecht: Kluwer, 1988.
-- BREIMAN, L. Random forests. *Machine Learning*, v. 45, n. 1, p. 5–32, 2001.
-- GONZÁLEZ, M. A. S. A pesquisa de avaliação de imóveis no Brasil. *Engenharia Civil*, Porto Alegre, 1993.
-- HERMANN, B. M.; HADDAD, E. A. Mercado imobiliário e amenidades urbanas. *Estudos Econômicos*, v. 35, n. 3, 2005.
-- LANCASTER, K. J. A new approach to consumer theory. *Journal of Political Economy*, v. 74, n. 2, p. 132–157, 1966.
-- LESAGE, J.; PACE, R. K. *Introduction to Spatial Econometrics*. Boca Raton: CRC Press, 2009.
-- ROSEN, S. Hedonic prices and implicit markets. *Journal of Political Economy*, v. 82, n. 1, p. 34–55, 1974.
-- TOBLER, W. A computer movie simulating urban growth in the Detroit region. *Economic Geography*, v. 46, p. 234–240, 1970.
-- WHITE, H. A heteroskedasticity-consistent covariance matrix estimator. *Econometrica*, v. 48, n. 4, p. 817–838, 1980.
